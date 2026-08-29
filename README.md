@@ -6,11 +6,25 @@
 >
 > The reason is the point of this project: a backtest can improve before the underlying policy becomes something worth trading.
 
+## The strategic starting point: an All Weather-style Core
+
+The Core is **not an allocation invented for this project**. It is a liquid-ETF implementation of the widely circulated retail **All Weather / All Seasons-style** mix associated with Ray Dalio's risk-balanced framework: diversify across assets that respond differently to surprises in economic growth and inflation rather than rely on one macro forecast.
+
+| Asset role | Weight | ETF used here |
+| --- | ---: | --- |
+| U.S. stocks | 30% | VTI |
+| Long-term U.S. Treasuries | 40% | TLT |
+| Intermediate-term U.S. Treasuries | 15% | IEF |
+| Broad commodities | 7.5% | DBC |
+| Gold | 7.5% | GLD |
+
+This simplified retail allocation is used here only as an **external strategic anchor**. It should not be read as a reconstruction of Bridgewater's institutional All Weather portfolio, and this project does not optimize these weights or claim to validate All Weather itself.
+
+Background on the underlying idea: [Bridgewater — *The All Weather Story*](https://www.bridgewater.com/research-and-insights/the-all-weather-story).
+
 ## The question
 
-The starting point is a strategic multi-asset portfolio: **30% U.S. stocks (VTI), 40% long-term U.S. Treasuries (TLT), 15% intermediate-term U.S. Treasuries (IEF), 7.5% broad commodities (DBC), and 7.5% gold (GLD)**.
-
-The goal was not to optimize those weights. It was to ask a narrower practical question:
+Given that strategic anchor, the project asks a narrower practical question:
 
 **Can simple tactical overlays — temporary changes around the strategic Core — improve the portfolio without turning it into a fragile, always-on, or implementation-heavy trading system?**
 
