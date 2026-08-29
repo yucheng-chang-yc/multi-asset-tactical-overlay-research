@@ -6,9 +6,15 @@
 >
 > The reason is the point of this project: a backtest can improve before the underlying policy becomes something worth trading.
 
-## The strategic starting point: an All Weather-style Core
+## Starting from an All Weather idea
 
-The Core is **not an allocation invented for this project**. It is a liquid-ETF implementation of the widely circulated retail **All Weather / All Seasons-style** mix associated with Ray Dalio's risk-balanced framework: diversify across assets that respond differently to surprises in economic growth and inflation rather than rely on one macro forecast.
+The appeal of an **All Weather-style** portfolio is simple: do not build the whole portfolio around one macro forecast. Combine assets that respond differently to surprises in economic growth and inflation, so the strategic Core has more than one source of resilience.
+
+That makes it a useful starting point for a harder question:
+
+**If the Core is already diversified across very different economic exposures, can a small set of simple tactical rules improve it further without turning it into an always-on trading system?**
+
+For this research, I use a simplified ETF-based All Weather-style Core:
 
 | Asset role | Weight | ETF used here |
 | --- | ---: | --- |
@@ -18,15 +24,9 @@ The Core is **not an allocation invented for this project**. It is a liquid-ETF 
 | Broad commodities | 7.5% | DBC |
 | Gold | 7.5% | GLD |
 
-This simplified retail allocation is used here only as an **external strategic anchor**. It should not be read as a reconstruction of Bridgewater's institutional All Weather portfolio, and this project does not optimize these weights or claim to validate All Weather itself.
+This mix is used as the **strategic starting point**, not as something optimized inside this project. Background on the underlying idea: [Bridgewater — *The All Weather Story*](https://www.bridgewater.com/research-and-insights/the-all-weather-story).
 
-Background on the underlying idea: [Bridgewater — *The All Weather Story*](https://www.bridgewater.com/research-and-insights/the-all-weather-story).
-
-## The question
-
-Given that strategic anchor, the project asks a narrower practical question:
-
-**Can simple tactical overlays — temporary changes around the strategic Core — improve the portfolio without turning it into a fragile, always-on, or implementation-heavy trading system?**
+## The tactical question
 
 I tested rebalancing rules, standing cash reserves, drawdown and rebound responses, volatility controls, and trend-based leverage across **320 parameterized strategy-grid evaluations**, then applied additional attribution and implementation checks to the ideas that looked most promising. These grid rows are related configurations, not 320 independent statistical tests.
 
@@ -59,7 +59,7 @@ These views are complementary constructions, **not independent replications**.
 
 This is a reproducible investment-research case study about **decision quality**, not a claim that a profitable trading strategy was discovered.
 
-The strongest historical result is deliberately subjected to additional tests that could invalidate its practical use. The long-history view includes modeled proxy construction, and financing sensitivity is a simplified implementation boundary rather than an observed leveraged-product cost. **This research does not recommend real-money leverage or validate a specific leveraged-product implementation.**
+The ETF mix above is a simplified retail implementation inspired by All Weather principles, not a reconstruction of Bridgewater's institutional portfolio. The strongest historical result is deliberately subjected to additional tests that could invalidate its practical use. The long-history view includes modeled proxy construction, and financing sensitivity is a simplified implementation boundary rather than an observed leveraged-product cost. **This research does not recommend real-money leverage or validate a specific leveraged-product implementation.**
 
 ## Reproduce it locally
 
